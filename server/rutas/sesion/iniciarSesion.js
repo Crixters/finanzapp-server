@@ -6,13 +6,12 @@ const conexionDB = require('../../core/conexiones/conexionDB');
 const utilidadesUsuario = require('../../core/utilidades/utilidadesUsuario');
 const validadorUsuario = require('../../core/validadores/validadorUsuario');
 const providerUsuario = require('../../data/providerUsuario');
-const {habilitarCORS} = require('../../middlewares/habilitarCORS');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.post('/api/iniciarSesion', habilitarCORS ,  async (req, res) => {
+app.post('/api/iniciarSesion',  async (req, res) => {
 
     let clienteInstanciado = conexionDB.instanciarCliente();
 

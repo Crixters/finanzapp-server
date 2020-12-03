@@ -5,13 +5,13 @@ const conexionDB = require('../../core/conexiones/conexionDB');
 const providerUsuario = require('../../data/providerUsuario');
 const utilidadesUsuario = require('../../core/utilidades/utilidadesUsuario');
 const validadorUsuario = require('../../core/validadores/validadorUsuario');
-const {habilitarCORS} = require('../../middlewares/habilitarCORS');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.post('/api/registrarEmpresario', habilitarCORS , async (req, res) => {
+app.post('/api/registrarEmpresario', async (req, res) => {
 
     let clienteInstanciado = conexionDB.instanciarCliente();
 
