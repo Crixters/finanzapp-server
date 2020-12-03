@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 require('./config/config');
-const {habilitarCORS} = require('./middlewares/habilitarCORS');
 
-app.use(habilitarCORS());
+app.use(cors());
 app.use(require('./rutas/presentadorRutas'));//
 
 app.listen(process.env.PORT, () => {
